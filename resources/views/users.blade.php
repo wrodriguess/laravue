@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{{-- Utilizando a tamplate do blade --}}
+@extends('layouts.default')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Get All</title>
-</head>
+{{-- Informando o titulo da página --}}
+@section('title', 'Users')
 
-<body>
+{{-- Informando que o conteudo abaixo será exibido no yield content --}}
+@section('content')
     <h1>Get All - {{ count($users) }} usuários</h1>
     <ul>
         @foreach ($users as $user)
             <li>{{ $user->name }}</li>
         @endforeach
     </ul>
-</body>
-
-</html>
+@endsection
