@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index(User $user)
+    public function index()
     {
-        return $user->all();
+        $users = User::all();
+        return view('users', ["users" => $users]);
     }
 
     public function show(User $user)
