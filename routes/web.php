@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/hello-world', function () {
@@ -42,4 +43,8 @@ Route::prefix('/usuarios')->group(function () {
 // Dizendo ao laravel que irei buscar o usuário utilizando o email
 Route::get('/user/{user:email}', function (User $user) {
     return $user;
+});
+
+Route::get('/request', function (Request $request) {
+    dd($request->all());
 });
